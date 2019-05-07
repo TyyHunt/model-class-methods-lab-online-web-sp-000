@@ -29,7 +29,7 @@ class Boat < ActiveRecord::Base
 
   def self.with_three_classifications
     includes(:classifications).find_each do |classification|
-      classification.where(classification.count == 3)
+      classification.where(classifications.count == 3)
     end
   end
 end
